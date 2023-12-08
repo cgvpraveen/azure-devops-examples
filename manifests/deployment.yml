@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ashokimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ashokimage
+  template:
+    metadata:
+      labels:
+        app: ashokimage 
+    spec:
+      containers:
+        - name: ashokimage 
+          image: ractjsacr.azurecr.io/ashokimage
+          ports:
+          - containerPort: 8080
